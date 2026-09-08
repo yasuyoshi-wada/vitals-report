@@ -4,8 +4,10 @@ readings = [
 ]
 
 def classify(systolic, diastolic):
-    if systolic is None or diastolic is None:
+    if systolic is None and diastolic is None:
         return "測定漏れ"
+    if systolic is None or diastolic is None:
+        return "再測定"
     if systolic >= 140 or diastolic >= 90:
         return "高血圧疑い"
     return "正常"
